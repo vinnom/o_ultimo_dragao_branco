@@ -8,6 +8,11 @@ class Jogo {
     cenarioMeio = new Cenario(imagem.meio, velocidade.cenarioMeio);
     cenarioFrente = new Cenario(imagem.frente, velocidade.cenarioFrente);
 
+    nuvem.push(new Nuvem(imagem.nuvemPequena, velocidade.nuvemPequena));
+    nuvem.push(new Nuvem(imagem.nuvemMedia, velocidade.nuvemMedia));
+    nuvem.push(new Nuvem(imagem.nuvemGrande, velocidade.nuvemGrande));
+    nuvem.push(new Nuvem(imagem.nuvemGigante, velocidade.nuvemGigante));
+
     coordenadasProtagonista = new Coordenadas(30, height / 2);
     protagonista = new Protagonista(imagem.protagonista, coordenadasProtagonista);
   }
@@ -16,6 +21,15 @@ class Jogo {
     cenarioFundo.exiba();
     cenarioMeio.exiba();
     cenarioFrente.exiba();
+  }
+
+  exibaObstaculos() {
+    for (let index = 0; index < nuvem.length; index++) {
+      nuvem[index].exiba();
+      if (nuvem[index].bateuNo(protagonista)) {
+        noLoop();
+      }
+    }
   }
 
   exibaProtagonista() {

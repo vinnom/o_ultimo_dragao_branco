@@ -14,12 +14,20 @@ const imagem = {
   meio: undefined,
   frente: undefined,
   protagonista: undefined,
+  nuvemPequena: undefined,
+  nuvemMedia: undefined,
+  nuvemGrande: undefined,
+  nuvemGigante: undefined,
   bolaDeFogo: undefined,
 };
 const velocidade = {
   cenarioFundo: 1,
   cenarioMeio: 2,
   cenarioFrente: 3,
+  nuvemPequena: 10,
+  nuvemMedia: 8,
+  nuvemGrande: 6,
+  nuvemGigante: 4,
   bolaDeFogo: 6,
 };
 
@@ -45,6 +53,7 @@ const matrizBolaDeFogo = [
   [0, 75],
 ];
 const bolaDeFogo = [];
+const nuvem = [];
 
 let coordenadasProtagonista;
 let cenarioFundo;
