@@ -6,6 +6,10 @@ class Personagem {
     this.linha = 0;
     this.atrasoInicial = 10;
     this.atraso = this.atrasoInicial;
+    this.largura = this.imagem.width / 4;
+    this.altura = this.imagem.height / 6;
+    this.larguraSprite = this.imagem.width;
+    this.alturaSprite = this.imagem.height / 2;
   }
 
   exiba() {
@@ -13,15 +17,14 @@ class Personagem {
       this.imagem,
       this.posicaoX,
       this.posicaoY,
-      this.imagem.width / 4,
-      this.imagem.height / 6,
+      this.largura,
+      this.altura,
       matrizProtagonista[this.linha][0],
       matrizProtagonista[this.linha][1],
-      this.imagem.width,
-      this.imagem.height / 2
+      this.larguraSprite,
+      this.alturaSprite
     );
     this._anime();
-    this.mova();
   }
 
   _anime() {
@@ -30,33 +33,11 @@ class Personagem {
       if (this.linha === 0) {
         this.linha++;
       }
-    }
-    if (this.atraso === 0) {
+    } else if (this.atraso === 0) {
       if (this.linha === 1) {
         this.linha--;
         this.atraso = this.atrasoInicial;
       }
-    }
-  }
-
-  mova() {
-    if (keyIsDown(UP_ARROW)) {
-      this._suba();
-    }
-    if (keyIsDown(DOWN_ARROW)) {
-      this._desca();
-    }
-  }
-
-  _suba() {
-    if (this.posicaoY > height / 40) {
-      this.posicaoY -= height / 40;
-    }
-  }
-
-  _desca() {
-    if (this.posicaoY < height - this.imagem.height / 6) {
-      this.posicaoY += height / 40;
     }
   }
 }

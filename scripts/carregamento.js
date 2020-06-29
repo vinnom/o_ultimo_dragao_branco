@@ -3,4 +3,5 @@ function preload() {
   imagem.meio = loadImage(caminhoImagem.meio);
   imagem.frente = loadImage(caminhoImagem.frente);
   imagem.protagonista = loadImage(caminhoImagem.protagonista);
+  imagem.bolaDeFogo = loadImage(caminhoImagem.bolaDeFogo);
 }

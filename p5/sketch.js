@@ -8,6 +8,11 @@ function setup() {
 function draw() {
   jogo.exibaCenario();
   jogo.exibaProtagonista();
+  jogo.exibaPoder();
 }
 
-function keyPressed() {}
+function keyPressed(){
+  if (keyCode === ESPACO) {
+    protagonista.atira();
+  }
+}

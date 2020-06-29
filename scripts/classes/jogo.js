@@ -9,7 +9,7 @@ class Jogo {
     cenarioFrente = new Cenario(imagem.frente, velocidade.cenarioFrente);
 
     coordenadasProtagonista = new Coordenadas(30, height / 2);
-    protagonista = new Personagem(imagem.protagonista, coordenadasProtagonista);
+    protagonista = new Protagonista(imagem.protagonista, coordenadasProtagonista);
   }
 
   exibaCenario() {
@@ -20,5 +20,13 @@ class Jogo {
 
   exibaProtagonista() {
     protagonista.exiba();
+  }
+
+  exibaPoder() {
+    for (let index = 0; index < bolaDeFogo.length; index++) {
+      if (bolaDeFogo[index].lancado) {
+        bolaDeFogo[index].exiba();
+      }
+    }
   }
 }
