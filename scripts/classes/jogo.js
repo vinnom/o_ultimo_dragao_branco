@@ -4,25 +4,47 @@ class Jogo {
   }
 
   inicializa() {
-    instancia();
+    if (this.estagio === estagio.inicio) {
+      cenarioFundo = new Cenario(imagem.fundo, velocidade.cenarioFundo);
+      cenarioMeio = new Cenario(imagem.meio, velocidade.cenarioMeio);
+      cenarioFrente = new Cenario(imagem.frente, velocidade.cenarioFrente);
+    } else {
+      instancia();
+    }
   }
 
   interrompe() {
     image(imagem.gameover, width / 2 - imagem.gameover.width / 2, height / 3 - imagem.gameover.height / 2);
-    botaoReiniciar = createButton("Reiniciar");
-    botaoReiniciar.size(100, 80);
-    botaoReiniciar.position(width / 2 - 80, height / 3 - imagem.gameover.height / 2 + 200);
-    botaoReiniciar.mousePressed(reinicie);
+    botaoJogar = createButton("Reiniciar");
+    botaoJogar.size(100, 80);
+    botaoJogar.position(width / 2 - 80, height / 3 - imagem.gameover.height / 2 + 200);
+    botaoJogar.mousePressed(reinicie);
     noLoop();
   }
 
   exiba() {
-    this._exibaCenario();
-    this._exibaProtagonista();
-    this._exibaInimigos();
-    this._exibaObstaculos();
-    this._exibaPoder();
-    this._exibaPlacar();
+    if (this.estagio === estagio.inicio) {
+      this._exibaCenario();
+      fill("#ffffff");
+      stroke("#000000");
+      textAlign(CENTER);
+      textSize(width / 15);
+      text("O Último Dragão Branco", width / 2, height / 3);
+      textSize(width / 60);
+      text("Ajude o último dragão branco contra uma horda de dragões!", width / 2, height / 3 + 50);
+      textSize(width / 60);
+      text("Aperte ENTER para começar", width / 2, height / 3 + 100);
+      textSize(width / 60);
+      text("SHIFT - pausa", width / 2, height / 3 + 200);
+      text("ESPAÇO - atira", width / 2, height / 3 + 250);
+    } else {
+      this._exibaCenario();
+      this._exibaProtagonista();
+      this._exibaInimigos();
+      this._exibaObstaculos();
+      this._exibaPoder();
+      this._exibaPlacar();
+    }
   }
 
   _exibaCenario() {

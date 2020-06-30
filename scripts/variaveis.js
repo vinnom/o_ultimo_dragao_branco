@@ -71,6 +71,11 @@ const bolaDeFogo = [];
 const nuvem = [];
 const inimigo = [];
 
+const estagio = {
+  inicio: "tela inicial",
+  fase: "fase",
+};
+
 let coordenadasProtagonista;
 let coordenadasInimigo;
 let cenarioFundo;
@@ -78,6 +83,6 @@ let cenarioMeio;
 let cenarioFrente;
 let protagonista;
 
-let botaoReiniciar;
+let botaoJogar;
 let placar;
 let jogo;
