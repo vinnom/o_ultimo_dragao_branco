@@ -12,4 +12,6 @@ function preload() {
   imagem.nuvemGrande = loadImage(caminhoImagem.nuvemGrande);
   imagem.nuvemGigante = loadImage(caminhoImagem.nuvemGigante);
   imagem.gameover = loadImage(caminhoImagem.gameover);
+
+  som.trilha = loadSound(caminhoSom.trilha);
 }

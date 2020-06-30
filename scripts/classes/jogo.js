@@ -11,6 +11,7 @@ class Jogo {
     } else {
       instancia();
     }
+    som.trilha.loop();
   }
 
   interrompe() {
@@ -19,6 +20,7 @@ class Jogo {
     botaoJogar.size(100, 80);
     botaoJogar.position(width / 2 - 80, height / 3 - imagem.gameover.height / 2 + 200);
     botaoJogar.mousePressed(reinicie);
+    som.trilha.stop();
     noLoop();
   }
 

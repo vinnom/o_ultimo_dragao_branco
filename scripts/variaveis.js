@@ -41,6 +41,12 @@ const velocidade = {
   nuvemGigante: 4,
   bolaDeFogo: 6,
 };
+const caminhoSom = {
+  trilha: "../som/trilha.mp3",
+};
+const som = {
+  trilha: undefined,
+};
 
 const ESPACO = 32;
 
