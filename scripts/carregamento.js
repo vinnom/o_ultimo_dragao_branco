@@ -11,4 +11,5 @@ function preload() {
   imagem.nuvemMedia = loadImage(caminhoImagem.nuvemMedia);
   imagem.nuvemGrande = loadImage(caminhoImagem.nuvemGrande);
   imagem.nuvemGigante = loadImage(caminhoImagem.nuvemGigante);
+  imagem.gameover = loadImage(caminhoImagem.gameover);
 }

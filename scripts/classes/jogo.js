@@ -7,6 +7,15 @@ class Jogo {
     instancia();
   }
 
+  interrompe() {
+    image(imagem.gameover, width / 2 - imagem.gameover.width / 2, height / 3 - imagem.gameover.height / 2);
+    botaoReiniciar = createButton("Reiniciar");
+    botaoReiniciar.size(100, 80);
+    botaoReiniciar.position(width / 2 - 80, height / 3 - imagem.gameover.height / 2 + 200);
+    botaoReiniciar.mousePressed(reinicie);
+    noLoop();
+  }
+
   exiba() {
     this._exibaCenario();
     this._exibaProtagonista();
@@ -26,7 +35,7 @@ class Jogo {
     for (let index = 0; index < nuvem.length; index++) {
       nuvem[index].exiba();
       if (nuvem[index].bateuNo(protagonista)) {
-        noLoop();
+        this.interrompe();
       }
     }
   }
@@ -35,7 +44,7 @@ class Jogo {
     if (placar.pontuacao >= 0) {
       placar.exiba();
     } else {
-      noLoop();
+      this.interrompe();
     }
   }
 
@@ -47,7 +56,7 @@ class Jogo {
     for (let index = 0; index < inimigo.length; index++) {
       inimigo[index].exiba();
       if (inimigo[index].bateuNo(protagonista)) {
-        noLoop();
+        this.interrompe();
       }
       if (inimigo[index].posicaoX <= 0) {
         placar.despontua(inimigo[index]);

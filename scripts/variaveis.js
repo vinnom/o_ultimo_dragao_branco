@@ -11,6 +11,7 @@ const caminhoImagem = {
   nuvemGrande: "../imagens/obstáculos/nuvemgrande.png",
   nuvemGigante: "../imagens/obstáculos/nuvemgigante.png",
   bolaDeFogo: "../imagens/personagem/protagonista/boladefogo.png",
+  gameover: "../imagens/recurso/gameover.png",
 };
 const imagem = {
   fundo: undefined,
@@ -25,6 +26,7 @@ const imagem = {
   nuvemGrande: undefined,
   nuvemGigante: undefined,
   bolaDeFogo: undefined,
+  gameover: undefined,
 };
 const velocidade = {
   cenarioFundo: 1,
@@ -76,5 +78,6 @@ let cenarioMeio;
 let cenarioFrente;
 let protagonista;
 
+let botaoReiniciar;
 let placar;
 let jogo;
