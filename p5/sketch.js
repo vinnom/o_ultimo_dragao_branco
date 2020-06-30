@@ -6,12 +6,7 @@ function setup() {
 }
 
 function draw() {
-  jogo.exibaCenario();
-  jogo.exibaProtagonista();
-  jogo.exibaPoder();
-  jogo.exibaObstaculos();
-  jogo.exibaInimigos();
-  jogo.exibaPlacar();
+  jogo.exiba();
 }
 
 function keyPressed() {

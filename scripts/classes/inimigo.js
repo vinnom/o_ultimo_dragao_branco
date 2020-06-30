@@ -1,10 +1,11 @@
 class Inimigo extends Personagem {
-  constructor(imagem, coordenadas, velocidade) {
+  constructor(imagem, coordenadas, velocidade, especie) {
     super(imagem, coordenadas);
     this.imagem = imagem;
     this.velocidade = velocidade;
     this.posicaoX = coordenadas.x;
     this.posicaoY = coordenadas.y;
+    this.especie = especie;
   }
 
   exiba() {
