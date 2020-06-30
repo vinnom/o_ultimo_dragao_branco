@@ -3,6 +3,9 @@ const caminhoImagem = {
   meio: "../imagens/cenario/meio.png",
   frente: "../imagens/cenario/frente.png",
   protagonista: "../imagens/personagem/protagonista/dragao.png",
+  verde: "../imagens/personagem/inimigos/verde.png",
+  vermelho: "../imagens/personagem/inimigos/vermelho.png",
+  preto: "../imagens/personagem/inimigos/preto.png",
   nuvemPequena: "../imagens/obstáculos/nuvempequena.png",
   nuvemMedia: "../imagens/obstáculos/nuvemmedia.png",
   nuvemGrande: "../imagens/obstáculos/nuvemgrande.png",
@@ -14,6 +17,9 @@ const imagem = {
   meio: undefined,
   frente: undefined,
   protagonista: undefined,
+  verde: undefined,
+  vermelho: undefined,
+  preto: undefined,
   nuvemPequena: undefined,
   nuvemMedia: undefined,
   nuvemGrande: undefined,
@@ -24,6 +30,9 @@ const velocidade = {
   cenarioFundo: 1,
   cenarioMeio: 2,
   cenarioFrente: 3,
+  verde: 5,
+  vermelho: 7,
+  preto: 9,
   nuvemPequena: 10,
   nuvemMedia: 8,
   nuvemGrande: 6,
@@ -36,6 +45,10 @@ const ESPACO = 32;
 const matrizProtagonista = [
   [0, 0],
   [0, 223],
+];
+const matrizInimigo = [
+  [0, 0],
+  [0, 224],
 ];
 const matrizBolaDeFogo = [
   [0, 0],
@@ -54,11 +67,14 @@ const matrizBolaDeFogo = [
 ];
 const bolaDeFogo = [];
 const nuvem = [];
+const inimigo = [];
 
 let coordenadasProtagonista;
+let coordenadasInimigo;
 let cenarioFundo;
 let cenarioMeio;
 let cenarioFrente;
 let protagonista;
 
+let placar;
 let jogo;

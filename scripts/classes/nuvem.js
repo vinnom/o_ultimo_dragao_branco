@@ -3,7 +3,7 @@ class Nuvem {
     this.imagem = imagemObstaculo;
     this.velocidade = velocidade;
     this.posicaoX = random(width, width * 3);
-    this.posicaoY = random(this.imagem.height, height - 450);
+    this.posicaoY = random(this.imagem.height + 50, height - 450);
   }
 
   exiba() {

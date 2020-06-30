@@ -57,13 +57,24 @@ class Poder {
 
   bateuNa(obstaculo) {
     return collideRectCircle(
-      obstaculo.posicaoX + 10,
-      obstaculo.posicaoY + 5,
+      obstaculo.posicaoX,
+      obstaculo.posicaoY,
       obstaculo.imagem.width * 0.8,
       obstaculo.imagem.height * 0.8,
       this.posicaoX + 35,
       this.posicaoY + 12,
       15
+    );
+  }
+
+  bateuNo(inimigo) {
+    return collideCircleCircle(
+      this.posicaoX + 35,
+      this.posicaoY + 12,
+      15,
+      inimigo.posicaoX + inimigo.imagem.width / 6,
+      inimigo.posicaoY + inimigo.imagem.height / 10,
+      40
     );
   }
 }

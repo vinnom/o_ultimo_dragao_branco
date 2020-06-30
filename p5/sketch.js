@@ -10,6 +10,8 @@ function draw() {
   jogo.exibaProtagonista();
   jogo.exibaPoder();
   jogo.exibaObstaculos();
+  jogo.exibaInimigos();
+  jogo.exibaPlacar();
 }
 
 function keyPressed() {
