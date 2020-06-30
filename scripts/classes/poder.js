@@ -30,7 +30,6 @@ class Poder {
     this._mova();
     this._anima();
     this._naTela();
-    console.log("exibindo")
   }
 
   _anima() {
@@ -54,5 +53,17 @@ class Poder {
     if (this.posicaoX > width) {
       this.lancado = false;
     }
+  }
+
+  bateuNa(obstaculo) {
+    return collideRectCircle(
+      obstaculo.posicaoX + 10,
+      obstaculo.posicaoY + 5,
+      obstaculo.imagem.width * 0.8,
+      obstaculo.imagem.height * 0.8,
+      this.posicaoX + 35,
+      this.posicaoY + 12,
+      15
+    );
   }
 }

@@ -40,7 +40,19 @@ class Jogo {
     for (let index = 0; index < bolaDeFogo.length; index++) {
       if (bolaDeFogo[index].lancado) {
         bolaDeFogo[index].exiba();
+        if (this._bateuNasNuvens(index)) {
+          bolaDeFogo.splice(index, 1);
+        }
       }
     }
+  }
+
+  _bateuNasNuvens(index) {
+    return (
+      bolaDeFogo[index].bateuNa(nuvem[0]) ||
+      bolaDeFogo[index].bateuNa(nuvem[1]) ||
+      bolaDeFogo[index].bateuNa(nuvem[2]) ||
+      bolaDeFogo[index].bateuNa(nuvem[3])
+    );
   }
 }
